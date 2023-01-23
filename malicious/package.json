@@ -1,0 +1,19 @@
+{
+  "name": "malicious",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node malicious_script.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.2.3",
+    "jsonwebtoken": "^9.0.0",
+    "node-bruteforce": "^1.1.0",
+    "request": "^2.88.2"
+  }
+}
