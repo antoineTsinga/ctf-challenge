@@ -36,6 +36,7 @@ async function rec_bf(username, commonPasswords, i, passwordR) {
   await axios
     .post(signinUrl, loginData)
     .then((response) => {
+      console.log(response.data);
       rec_bf(username, null, i, password);
     })
     .catch((error) => {

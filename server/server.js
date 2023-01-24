@@ -98,6 +98,7 @@ app.post("/signin", async (req, res) => {
         const payload = {
           id: userIn.id,
           role: userIn.role,
+          "message-ctf": "successfull",
         };
 
         const options = {
@@ -105,7 +106,10 @@ app.post("/signin", async (req, res) => {
         };
         const token = jwt.sign(payload, secretKey, options);
 
-        res.status(200).json({ token });
+        res
+          .status(200)
+          .header({ Authorization: token })
+          .json({ "message-ctf": "success login" });
       } else {
         res.status(401).json({ message: "Invalid Credential" });
       }

@@ -12,9 +12,9 @@ const secretKey = process.env.JWT_SECRET;
 
 router.use(authentication);
 
-router.get("/customer/", authorize("user"), async (req, res) => {
+router.get("/customer/:id", authorize("user"), async (req, res) => {
   try {
-    const customerId = req.query.id;
+    const customerId = req.params.id;
     const user = await userModel.findOne({ _id: customerId });
     if (!user) {
       return res.status(404).json({ message: "User not found" });
@@ -30,7 +30,7 @@ router.get("/customer/", authorize("user"), async (req, res) => {
 router.get("/users", authorize("admin"), async (req, res) => {
   try {
     const users = await userModel.find();
-    res.json(users);
+    res.json({ results: users, "message-ctf": "successfull" });
   } catch (error) {
     return res.status(500).json({ message: "Server error" });
   }
@@ -41,7 +41,7 @@ router.post("/users", authorize("admin"), async (req, res) => {
     const user = new userModel(req.body);
 
     await user.save();
-    res.json(user);
+    res.json({ user, "message-ctf": "successfull" });
   } catch (error) {
     return res.status(400).json({ message: error.message });
   }

@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 
 const commonTokensFile = "common_token_secret_key.txt";
 const token =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzY2VhMzE0YmUyYTM0MWQwYWJkYjgwZSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjc0NDg3ODEzLCJleHAiOjE2NzQ1NzQyMTN9.PwJGQU46LIqm--nWvBCccwWeSm8lOfgtd_NWPy9a958";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzY2ZiYzcyMDNjMTRkOTQ3MTJkMGY4MCIsInJvbGUiOiJ1c2VyIiwibWVzc2FnZS1jdGYiOiJzdWNjZXNzZnVsbCIsImlhdCI6MTY3NDU1ODYxNiwiZXhwIjoxNjc0NjQ1MDE2fQ.xezkMskhIJ_YGiYmurToCULxFnSxM_bYXO75zO8o6V0";
 
 fs.readFile(commonTokensFile, "utf8", (err, data) => {
   if (err) throw err;
